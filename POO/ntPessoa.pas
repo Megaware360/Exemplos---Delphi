@@ -1,3 +1,15 @@
+{*******************************************************************************}
+{ Projeto: Exemplo POO                                                          }
+{                                                                               }
+{ O objetivo desta aplicação é exemplificar POO para mostrar como funciona a    }
+{ programação orientada a objetos para novos desenvolvedores, facilitando a     }
+{ criação de interfaces, modelos e controladores para operações                 }
+{                                                                               }
+{ Desenvolvido por David Willian Lopes Brito                                     }
+{ Email: Lopes.willian@hotmail.com                                              }
+{                                                                               }
+{*******************************************************************************}
+
 unit ntPessoa;
 
 interface
