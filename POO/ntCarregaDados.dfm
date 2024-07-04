@@ -32,7 +32,6 @@ object Form1: TForm1
     Height = 425
     Align = alRight
     TabOrder = 1
-    ExplicitLeft = 517
   end
   object pnl3: TPanel
     Left = 1
@@ -162,7 +161,7 @@ object Form1: TForm1
     UpdateOptions.CheckRequired = False
     UpdateOptions.AutoCommitUpdates = True
     Left = 565
-    Top = 104
+    Top = 160
     object FdmCadPessoaAlunA_NOME: TStringField
       DisplayLabel = 'Nome'
       FieldName = 'A_NOME'
@@ -180,6 +179,6 @@ object Form1: TForm1
   object dsCadPessoaAlun: TDataSource
     DataSet = FdmCadPessoaAlun
     Left = 565
-    Top = 152
+    Top = 200
   end
 end
