@@ -161,7 +161,7 @@ object FrmPOO: TFrmPOO
     UpdateOptions.CheckRequired = False
     UpdateOptions.AutoCommitUpdates = True
     Left = 565
-    Top = 160
+    Top = 304
     object FdmCadPessoaAlunA_NOME: TStringField
       DisplayLabel = 'Nome'
       FieldName = 'A_NOME'
@@ -179,6 +179,6 @@ object FrmPOO: TFrmPOO
   object dsCadPessoaAlun: TDataSource
     DataSet = FdmCadPessoaAlun
     Left = 565
-    Top = 200
+    Top = 336
   end
 end
