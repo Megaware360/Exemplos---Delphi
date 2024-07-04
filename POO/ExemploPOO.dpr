@@ -1,8 +1,8 @@
-program Project1;
+program ExemploPOO;
 
 uses
   Vcl.Forms,
-  ntCarregaDados in 'ntCarregaDados.pas' {Form1},
+  ntCarregaDados in 'ntCarregaDados.pas' {FrmPOO},
   ntPessoa in 'ntPessoa.pas';
 
 {$R *.res}
@@ -10,6 +10,6 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TFrmPOO, FrmPOO);
   Application.Run;
 end.

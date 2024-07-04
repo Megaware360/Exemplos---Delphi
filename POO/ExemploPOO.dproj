@@ -3,7 +3,7 @@
         <ProjectGuid>{8FF2C1BD-5528-4EA2-BB59-8CDCCBDD6E85}</ProjectGuid>
         <ProjectVersion>18.4</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
-        <MainSource>Project1.dpr</MainSource>
+        <MainSource>ExemploPOO.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
@@ -58,7 +58,7 @@
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
-        <SanitizedProjectName>Project1</SanitizedProjectName>
+        <SanitizedProjectName>ExemploPOO</SanitizedProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_UsePackage>DBXSqliteDriver;DBXDb2Driver;vclactnband;vclFireDAC;tethering;dclRBIBE2125;FireDACADSDriver;GK;ACBr_BPeDabpeESCPOS;ACBr_BPe;FireDACMSSQLDriver;vcltouch;ACBr_NFe;vcldb;Intraweb;svn;rbDAD2125;rbTC2125;ACBr_NFeDanfeESCPOS;ACBr_PAFNFCe;ACBr_OFX;vclib;vclZipForged25;office2K;FireDACDBXDriver;vclx;ACBr_NFCom;spdNotaSegura_D10T;ACBr_GTIN;ACBr_Reinf;VCLRESTComponents;rbFireDAC2125;vclie;bindengine;ACBr_PAF;FireDACMySQLDriver;ACBr_SATECFVirtual;DataSnapClient;ACBr_OpenDelivery;rbUSERDesign2125;bindcompdbx;ACBr_TCP;DBXSybaseASEDriver;IndyIPServer;ACBr_CTe;IndySystem;ACBr_PagFor;dsnapcon;ACBre_Social;FireDACMSAccDriver;fmxFireDAC;FireDACInfxDriver;vclimg;tscap32;Jcl;rbDIDE2125;ACBr_SPEDImportar;ACBr_SPED;ACBr_MDFe;emshosting;TCFLib250;ACBr_LFD;DBXOdbcDriver;FireDACTDataDriver;FMXTee;DbxCommonDriver;rbUSER2125;ACBr_CIOT;spdGovBase_D10T;CompDsg;xmlrtl;DataSnapNativeClient;fmxobj;rtl;DbxClientDriver;DBXSybaseASADriver;rbIBE2125;ACBr_Convenio115;appanalytics;ACBr_DebitoAutomatico;IndyIPClient;bindcompvcl;TeeUI;VclSmp;FireDACODBCDriver;dclRBADO2125;TCFDsg250;rbTCUI2125;DataSnapIndy10ServerTransport;dclRBDBE2125;rbRIDE2125;ACBr_Boleto;DataSnapProviderClient;ACBr_SEF2;FireDACMongoDBDriver;rbIDE2125;ACBr_NFSe;DataSnapServerMidas;DBXInterBaseDriver;ACBr_NF3e;ACBr_TEFD;rbDBE2125;svnui;ACBr_SATWS;rbADO2125;dclZipForged25;DBXMSSQLDriver;DatasnapConnectorsFreePascal;ACBr_EDI;ACBr_ONE;bindcompfmx;DBXOracleDriver;inetdb;ACBr_Diversos;rbDB2125;FmxTeeUI;emsedge;ACBr_LCDPR;fmx;fmxdae;ACBr_Ponto;dbexpress;IndyCore;dsnap;DataSnapCommon;Package1;ACBr_NFSeX;DataSnapConnectors;ACBR_DeSTDA;ACBr_SAT;JclDeveloperTools;FireDACOracleDriver;DBXMySQLDriver;DBXFirebirdDriver;ACBr_Sintegra;FireDACCommonODBC;ACBr_ADRCST;ACBr_GNRE;EditHSF;IndyIPCommon;HSFComps;vcl;rbCloudSC2125;ACBr_SATExtratoESCPOS;FireDACDb2Driver;CompPkg;ACBr_Integrador;cepack;TeeDB;rbBDE2125;ACBr_Comum;FireDACPgDriver;ibmonitor;FireDACASADriver;dclRBFireDAC2125;rbRAP2125;ibxpress;Tee;DataSnapServer;ibxbindings;rbRCL2125;vclwinx;FireDACDSDriver;ACBr_OpenSSL;teste;CustomIPTransport;vcldsnap;ACBr_PIXCD;bindcomp;ACBr_Serial;DBXInformixDriver;dclusr;ACBr_BlocoX;dbxcds;ACBr_NFCeECFVirtual;adortl;dclRBE2125;ACBr_ANe;dsnapxml;dbrtl;inetdbxpress;IndyProtocols;rbCIDE2125;JclContainers;ACBr_NF3eDANF3eESCPOS;ACBr_MTER;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
@@ -103,7 +103,7 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="ntCarregaDados.pas">
-            <Form>Form1</Form>
+            <Form>FrmPOO</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="ntPessoa.pas"/>
@@ -136,13 +136,13 @@
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp250.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
                 </Excluded_Packages>
                 <Source>
-                    <Source Name="MainSource">Project1.dpr</Source>
+                    <Source Name="MainSource">ExemploPOO.dpr</Source>
                 </Source>
             </Delphi.Personality>
             <Deployment Version="3">
-                <DeployFile LocalName="Win32\Debug\Project1.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="Win32\Debug\ExemploPOO.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
-                        <RemoteName>Project1.exe</RemoteName>
+                        <RemoteName>ExemploPOO.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
