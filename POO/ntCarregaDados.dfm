@@ -1,9 +1,9 @@
-object Form1: TForm1
+object FrmPOO: TFrmPOO
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'Form1'
+  Caption = 'Exemplo POO'
   ClientHeight = 425
   ClientWidth = 632
   Color = clBtnFace

@@ -11,7 +11,7 @@ uses
   Vcl.StdCtrls, Vcl.Buttons;
 
 type
-  TForm1 = class(TForm)
+  TFrmPOO = class(TForm)
     pnl1: TPanel;
     pnl2: TPanel;
     pnl3: TPanel;
@@ -46,13 +46,13 @@ type
   end;
 
 var
-  Form1: TForm1;
+  FrmPOO: TFrmPOO;
 
 implementation
 
 {$R *.dfm}
 
-procedure TForm1.bHabilitaCampo(bHab: boolean);
+procedure TFrmPOO.bHabilitaCampo(bHab: boolean);
 begin
   dt_matricula.Enabled:=bHab;
   lb3.Enabled:=bHab;
@@ -60,7 +60,7 @@ end;
 
 
 
-procedure TForm1.bt_gravarClick(Sender: TObject);
+procedure TFrmPOO.bt_gravarClick(Sender: TObject);
 var
   Pessoa: TPessoa;
   Aluno: TAluno;
@@ -99,7 +99,7 @@ end;
 
 
 
-procedure TForm1.cbb1Change(Sender: TObject);
+procedure TFrmPOO.cbb1Change(Sender: TObject);
 begin
   if cbb1.ItemIndex > 0 then
     bHabilitaCampo(True)
@@ -109,13 +109,13 @@ end;
 
 
 
-procedure TForm1.dt_idadeExit(Sender: TObject);
+procedure TFrmPOO.dt_idadeExit(Sender: TObject);
 begin
   if dt_idade.Text = '' then
     dt_idade.Text:='0';
 end;
 
-procedure TForm1.FormKeyPress(Sender: TObject; var Key: Char);
+procedure TFrmPOO.FormKeyPress(Sender: TObject; var Key: Char);
 begin
   if Key = #13 Then
     begin
@@ -130,7 +130,7 @@ begin
     end;
 end;
 
-procedure TForm1.InserirDados(Dados: TStrings; Matricula: Boolean);
+procedure TFrmPOO.InserirDados(Dados: TStrings; Matricula: Boolean);
 begin
   FdmCadPessoaAlun.Append;
   FdmCadPessoaAlun.FieldByName('A_NOME').AsString:=Dados.Values['Nome'];
@@ -142,7 +142,7 @@ begin
   dt_Nome.SetFocus;
 end;
 
-procedure TForm1.LimparDados;
+procedure TFrmPOO.LimparDados;
 begin
   dt_Nome.Clear;
   dt_idade.Text:='0';
