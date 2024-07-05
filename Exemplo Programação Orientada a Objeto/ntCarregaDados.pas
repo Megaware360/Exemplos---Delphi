@@ -72,8 +72,6 @@ begin
   lb3.Enabled:=bHab;
 end;
 
-
-
 procedure TFrmPOO.bt_gravarClick(Sender: TObject);
 var
   Pessoa: TPessoa;
@@ -111,8 +109,6 @@ begin
 
 end;
 
-
-
 procedure TFrmPOO.cbb1Change(Sender: TObject);
 begin
   if cbb1.ItemIndex > 0 then
@@ -120,8 +116,6 @@ begin
   else
     bHabilitaCampo(False);
 end;
-
-
 
 procedure TFrmPOO.dt_idadeExit(Sender: TObject);
 begin
