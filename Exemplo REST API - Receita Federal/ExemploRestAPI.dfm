@@ -1,7 +1,7 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'Consultar CNPJ Receita Federal.'
   ClientHeight = 337
   ClientWidth = 816
   Color = clBtnFace
@@ -20,8 +20,6 @@ object Form1: TForm1
     Height = 337
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 8
-    ExplicitTop = 8
     object lb11: TLabel
       Left = 16
       Top = 96
@@ -215,7 +213,6 @@ object Form1: TForm1
       Align = alRight
       ScrollBars = ssVertical
       TabOrder = 14
-      ExplicitLeft = 649
     end
   end
   object RESTClient: TRESTClient

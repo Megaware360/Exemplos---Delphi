@@ -140,7 +140,7 @@ begin
     dtCidade.Text := jsonObject.GetValue('municipio').Value;
     dtuf.Text := jsonObject.GetValue('uf').Value;
     dtEnd.Text := jsonObject.GetValue('logradouro').Value;
-    dtBairro.Text := jsonObject.GetValue('bairro').Value;  // Bairros em maiúsculas
+    dtBairro.Text := jsonObject.GetValue('bairro').Value;
     dtNumero.Text := jsonObject.GetValue('numero').Value;
     dtCep.Text := jsonObject.GetValue('cep').Value;
   finally
