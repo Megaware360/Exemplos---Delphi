@@ -79,7 +79,8 @@ begin
   begin
     try
       Servico := GetAtendeCliente(False, '', HTTPRIO1);
-      Retorno := Servico.verificaDisponibilidadeServico(StrToInt(dtCodAdminis.Text), '4677 ', dtCepOrig.Text, dtCepDest.Text, dtUsuario.Text, dtSenha.Text);
+      Retorno := Servico.verificaDisponibilidadeServico(StrToInt(dtCodAdminis.Text),
+        '4677 ', dtCepOrig.Text, dtCepDest.Text, dtUsuario.Text, dtSenha.Text);
 
       if Retorno = '0#' then
         Memo1.Lines.Add('Existe Disponibilidade de Servico para o trajeto informado!')

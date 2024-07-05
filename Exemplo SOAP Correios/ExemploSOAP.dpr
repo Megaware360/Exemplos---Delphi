@@ -3,7 +3,7 @@ program ExemploSOAP;
 uses
   Vcl.Forms,
   ntCorreios in 'ntCorreios.pas' {FrmExemploSOAP},
-  AtendeCliente1 in 'AtendeCliente1.pas';
+  WSCliente in 'WSCliente.pas';
 
 {$R *.res}
 
