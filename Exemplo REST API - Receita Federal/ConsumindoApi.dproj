@@ -87,7 +87,7 @@
         <DCC_UnitSearchPath>C:\Program Files (x86)\Embarcadero\Studio\19.0\source\Indy10\Protocols;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_ExeOutput>C:\Lixo do Delphi\</DCC_ExeOutput>
+        <DCC_DcuOutput>C:\Lixo do Delphi\</DCC_DcuOutput>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
