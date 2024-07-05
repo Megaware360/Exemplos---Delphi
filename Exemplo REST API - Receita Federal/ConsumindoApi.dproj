@@ -87,6 +87,7 @@
         <DCC_UnitSearchPath>C:\Program Files (x86)\Embarcadero\Studio\19.0\source\Indy10\Protocols;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_ExeOutput>C:\Lixo do Delphi\</DCC_ExeOutput>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -124,6 +125,14 @@
         <BorlandProject>
             <Delphi.Personality>
                 <Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\19.0\Bpl\JclBaseExpert250.bpl">JCL Package containing common units for JCL Experts</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\19.0\Bpl\JclDebugExpert250.bpl">JCL Debug IDE extension</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\19.0\Bpl\JclProjectAnalysisExpert250.bpl">JCL Project Analyzer</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\19.0\Bpl\JclFavoriteFoldersExpert250.bpl">JCL Open and Save IDE dialogs with favorite folders</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\19.0\Bpl\JclSIMDViewExpert250.bpl">JCL Debug Window of XMM registers</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\19.0\Bpl\JclStackTraceViewerExpert250.bpl">JCL Stack Trace Viewer</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\spdNFE_D10T.bpl">File c:\program files (x86)\embarcadero\studio\19.0\bin\spdNFE_D10T.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\spdNFeGov_D10T.bpl">File c:\program files (x86)\embarcadero\studio\19.0\bin\spdNFeGov_D10T.bpl not found</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp250.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
                 </Excluded_Packages>
                 <Source>
