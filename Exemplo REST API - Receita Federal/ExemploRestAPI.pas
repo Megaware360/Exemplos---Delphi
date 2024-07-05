@@ -1,5 +1,15 @@
 unit ExemploRestAPI;
 
+
+{*******************************************************************************}
+{ Projeto: ExemploRestAPI                                                       }
+{                                                                               }                                                                               }
+{ Desenvolvido por David Willian Lopes Brito                                    }
+{ Email: Lopes.willian@hotmail.com                                              }
+{                                                                               }
+{*******************************************************************************}
+
+
 interface
 
 uses

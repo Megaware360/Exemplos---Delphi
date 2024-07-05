@@ -1,15 +1,11 @@
-// ************************************************************************ //
-// The types declared in this file were generated from data read from the
-// WSDL File described below:
-// WSDL     : https://apphom.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente?wsdl
-//  >Import : https://apphom.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente?wsdl>0
-// Encoding : UTF-8
-// Version  : 1.0
-// (21/12/2022 15:39:33 - - $Rev: 90173 $)
-// ************************************************************************ //
-
 unit WSCliente;
-
+{*******************************************************************************}
+{ Projeto: Correios                                                             }
+{                                                                               }
+{ Desenvolvido por David Willian Lopes Brito                                    }
+{ Email: Lopes.willian@hotmail.com                                              }
+{                                                                               }
+{*******************************************************************************}
 interface
 
 uses Soap.InvokeRegistry, Soap.SOAPHTTPClient, System.Types, Soap.XSBuiltIns;
@@ -23,23 +19,6 @@ const
 
 type
 
-  // ************************************************************************ //
-  // The following types, referred to in the WSDL document are not being represented
-  // in this file. They are either aliases[@] of other types represented or were referred
-  // to but never[!] declared in the document. The types from the latter category
-  // typically map to predefined/known XML or Embarcadero types; however, they could also 
-  // indicate incorrect WSDL documents that failed to declare or import a schema type.
-  // ************************************************************************ //
-  // !:int             - "http://www.w3.org/2001/XMLSchema"[Gbl]
-  // !:long            - "http://www.w3.org/2001/XMLSchema"[Gbl]
-  // !:boolean         - "http://www.w3.org/2001/XMLSchema"[Gbl]
-  // !:string          - "http://www.w3.org/2001/XMLSchema"[Gbl]
-  // !:double          - "http://www.w3.org/2001/XMLSchema"[Gbl]
-  // !:unsignedShort   - "http://www.w3.org/2001/XMLSchema"[Gbl]
-  // !:dateTime        - "http://www.w3.org/2001/XMLSchema"[Gbl]
-  // !:short           - "http://www.w3.org/2001/XMLSchema"[Gbl]
-  // !:decimal         - "http://www.w3.org/2001/XMLSchema"[Gbl]
-  // !:base64Binary    - "http://www.w3.org/2001/XMLSchema"[Gbl]
 
   enderecoERP          = class;                 { "http://cliente.bean.master.sigep.bsb.correios.com.br/"[GblCplx] }
   parametroMaster      = class;                 { "http://cliente.bean.master.sigep.bsb.correios.com.br/"[GblCplx] }

@@ -111,6 +111,10 @@
     object Configuração: TTabSheet
       Caption = 'Configura'#231#227'o'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Usuario: TLabel
         Left = 3
         Top = 16

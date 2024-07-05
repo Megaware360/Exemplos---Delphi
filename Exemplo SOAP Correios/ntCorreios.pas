@@ -1,5 +1,14 @@
 unit ntCorreios;
 
+
+{*******************************************************************************}
+{ Projeto: Correios                                                             }
+{ Desenvolvido por David Willian Lopes Brito                                    }
+{ Email: Lopes.willian@hotmail.com                                              }
+{                                                                               }
+{*******************************************************************************}
+
+
 interface
 
 uses
