@@ -106,7 +106,6 @@ begin
       Aluno.Free;
     end;
   end;
-
 end;
 
 procedure TFrmPOO.cbb1Change(Sender: TObject);
@@ -155,7 +154,6 @@ begin
   dt_Nome.Clear;
   dt_idade.Text:='0';
   dt_matricula.Text:='';
-
 end;
 
 end.
