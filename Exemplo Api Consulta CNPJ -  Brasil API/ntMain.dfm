@@ -31,7 +31,7 @@ object Form1: TForm1
       TabOrder = 0
       object lb1: TLabel
         Left = 48
-        Top = 24
+        Top = 48
         Width = 29
         Height = 13
         Caption = 'CNPJ:'
@@ -47,7 +47,7 @@ object Form1: TForm1
       end
       object dt_CNPJ: TEdit
         Left = 48
-        Top = 40
+        Top = 64
         Width = 121
         Height = 21
         TabOrder = 1
