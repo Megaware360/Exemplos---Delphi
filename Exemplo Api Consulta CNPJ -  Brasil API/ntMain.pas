@@ -143,7 +143,6 @@ begin
 
     finally
       JSONResponse.Free;
-       mmo1.Perform(EM_SCROLLCARET, 0, 0);
     end;
   except
     on E: ECNPJAPIException do

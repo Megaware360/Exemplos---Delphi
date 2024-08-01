@@ -22,8 +22,6 @@ object Form1: TForm1
     Height = 459
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 638
-    ExplicitHeight = 449
     object pnl1: TPanel
       Left = 441
       Top = 1
@@ -31,8 +29,6 @@ object Form1: TForm1
       Height = 457
       Align = alClient
       TabOrder = 0
-      ExplicitWidth = 196
-      ExplicitHeight = 447
       object lb1: TLabel
         Left = 48
         Top = 24
@@ -65,7 +61,6 @@ object Form1: TForm1
       Height = 457
       Align = alLeft
       TabOrder = 1
-      ExplicitHeight = 447
       object mmo1: TMemo
         Left = 1
         Top = 1
@@ -74,7 +69,6 @@ object Form1: TForm1
         Align = alClient
         ScrollBars = ssVertical
         TabOrder = 0
-        ExplicitHeight = 445
       end
     end
   end
