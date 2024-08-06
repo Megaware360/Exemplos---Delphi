@@ -16,8 +16,6 @@ type
     rg1: TRadioGroup;
     dt_Email: TEdit;
     lbEmail: TLabel;
-    medtSenha: TMaskEdit;
-    bt1: TBitBtn;
     lbSenha: TLabel;
     cbbSMTP: TComboBox;
     dtSmtp: TEdit;
@@ -25,11 +23,26 @@ type
     dtPorta: TEdit;
     lbPorta: TLabel;
     lbSSL: TLabel;
-    lb3: TLabel;
+    lbSMTP: TLabel;
     lbsmtpman: TLabel;
+    dtSenha: TEdit;
+    rgDadosDest: TRadioGroup;
+    lbEnviarPara: TLabel;
+    dtEmailDest: TEdit;
+    rgMensagem: TRadioGroup;
+    lbAssunto: TLabel;
+    dtAssunto: TEdit;
+    mmoMSG: TMemo;
+    mmoAnx: TMemo;
+    lbMsg: TLabel;
+    lbAnx: TLabel;
+    btAnexarArquivo: TBitBtn;
+    btEnviar: TBitBtn;
     procedure bt1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure cbbSMTPChange(Sender: TObject);
+    procedure btAnexarArquivoClick(Sender: TObject);
+    procedure btEnviarClick(Sender: TObject);
   private
     procedure SendEmail;
     { Private declarations }
@@ -51,12 +64,47 @@ begin
   SendEmail;
 end;
 
+procedure TForm1.btAnexarArquivoClick(Sender: TObject);
+var
+  OpenDialog: TOpenDialog;
+  i: Integer;
+begin
+  OpenDialog := TOpenDialog.Create(nil);
+  try
+    OpenDialog.Filter := 'Todos os Arquivos (*.*)|*.*';
+    OpenDialog.Options := [ofAllowMultiSelect];
+
+    if OpenDialog.Execute then
+    begin
+      mmoAnx.Lines.Clear; // Limpa a lista de arquivos antes de adicionar novos
+      for i := 0 to OpenDialog.Files.Count - 1 do
+      begin
+        mmoAnx.Lines.Add(OpenDialog.Files[i]); // Adiciona o caminho dos arquivos ao memo
+      end;
+    end;
+  finally
+    OpenDialog.Free;
+  end;
+
+end;
+
+procedure TForm1.btEnviarClick(Sender: TObject);
+begin
+  SendEmail;
+end;
+
 procedure TForm1.cbbSMTPChange(Sender: TObject);
 begin
   if cbbSMTP.ItemIndex = 3 then
-    dtSmtp.Visible:=True
+    begin
+      lbsmtpman.Visible:=True;
+      dtSmtp.Visible:=True;
+    end
   else
-    dtSmtp.Visible:=False;
+    begin
+      lbsmtpman.Visible:=False;
+      dtSmtp.Visible:=False;
+    end;
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
@@ -110,73 +158,73 @@ end;
 procedure TForm1.SendEmail;
 var
   SMTP: TIdSMTP;
-  SMTPConfig: TStringList;
   Msg: TIdMessage;
   SSL: TIdSSLIOHandlerSocketOpenSSL;
+  i: Integer;
   Attachment: TIdAttachmentFile;
-  OpenDialog: TOpenDialog;
 begin
-  OpenDialog := TOpenDialog.Create(nil);
+  SMTP := TIdSMTP.Create(nil);
+  Msg := TIdMessage.Create(nil);
+  SSL := TIdSSLIOHandlerSocketOpenSSL.Create(nil);
   try
-    OpenDialog.Filter := 'Todos os Arquivos (*.*)|*.*';
-    if OpenDialog.Execute then
+    // Configure o SSL Handler
+    SSL.SSLOptions.Method := sslvTLSv1;
+    SSL.SSLOptions.Mode := sslmUnassigned;
+
+    // Configure o componente SMTP
+    SMTP.IOHandler := SSL;
+    SMTP.Host := 'smtp-mail.outlook.com'; // Servidor SMTP
+    SMTP.Port := 587; // Porta SMTP para TLS
+    SMTP.Username := Trim(dt_Email.Text); // Seu e-mail
+    SMTP.Password := Trim(dtSenha.Text); // Sua senha
+    SMTP.UseTLS := utUseExplicitTLS; // Definindo para usar TLS
+
+    // Configure a mensagem de e-mail
+    Msg.From.Address := Trim(dt_Email.Text);
+    Msg.Recipients.EmailAddresses := Trim(dtEmailDest.Text); // Define o destinatário
+    Msg.Subject := dtAssunto.Text;
+    Msg.Body.Text := mmoMSG.Text;
+
+    // Adicionar anexos
+    for i := 0 to mmoAnx.Lines.Count - 1 do
     begin
-      SMTP := TIdSMTP.Create(nil);
-      Msg := TIdMessage.Create(nil);
-      SSL := TIdSSLIOHandlerSocketOpenSSL.Create(nil);
-      try
-        // Configure o SSL Handler (se necessário)
-        SSL.SSLOptions.Method := sslvTLSv1;
-        SSL.SSLOptions.Mode := sslmUnassigned;
-
-
-        SMTPConfig := TStringList(cbbSMTP.Items.Objects[cbbSMTP.ItemIndex]);
-
-        ShowMessage(SMTPConfig[0]);
-
-
-        // Configure o componente SMTP
-        SMTP.IOHandler := SSL;
-        SMTP.Host := 'smtp-mail.outlook.com'; // Servidor SMTP
-        SMTP.Port := 587; // Porta SMTP para TLS
-        SMTP.Username := Trim(dt_Email.Text); // Seu e-mail
-        SMTP.Password := Trim(medtSenha.Text); // Sua senha
-        SMTP.UseTLS:=utUseExplicitTLS; // Definindo para usar TLS
-
-        // Configure a mensagem de e-mail
-        Msg.From.Address := Trim(dt_Email.Text);
-        Msg.Recipients.EmailAddresses := Trim(dt_Email.Text);
-        Msg.Subject := 'Assunto do e-mail';
-        Msg.Body.Text := 'Email Teste';
-
-        // Adicionar o anexo
-        Attachment := TIdAttachmentFile.Create(Msg.MessageParts, OpenDialog.FileName);
+      if FileExists(mmoAnx.Lines[i]) then
+      begin
+        Attachment := TIdAttachmentFile.Create(Msg.MessageParts, mmoAnx.Lines[i]);
         try
-          // Você pode adicionar mais anexos, se necessário
-        finally
-          Attachment.Free;
-        end;
-
-        // Enviar o e-mail
-        SMTP.Connect;
-        try
-          SMTP.Send(Msg);
-          ShowMessage('E-mail com anexo enviado com sucesso!');
+          // Anexo adicionado
         except
           on E: Exception do
-            ShowMessage('Erro ao enviar e-mail: ' + E.Message);
+          begin
+            ShowMessage('Erro ao adicionar o anexo: ' + E.Message);
+            Exit; // Saia se houver erro ao adicionar o anexo
+          end;
         end;
-        SMTP.Disconnect;
-      finally
-        Msg.Free;
-        SMTP.Free;
-        SSL.Free;
+      end
+      else
+      begin
+        ShowMessage('O arquivo não existe: ' + mmoAnx.Lines[i]);
+        Exit; // Saia se o arquivo não existir
       end;
     end;
+
+    // Enviar o e-mail
+    SMTP.Connect;
+    try
+      SMTP.Send(Msg);
+      ShowMessage('E-mail com anexos enviado com sucesso!');
+    except
+      on E: Exception do
+        ShowMessage('Erro ao enviar e-mail: ' + E.Message);
+    end;
+    SMTP.Disconnect;
   finally
-    OpenDialog.Free;
+    Msg.Free;
+    SMTP.Free;
+    SSL.Free;
   end;
 end;
+
 
 
 
